@@ -23,7 +23,8 @@ export class DashboardComponent {
     title: 'AngularJs',
     description: 'Altes Buch',
     rating: 3
-  }];
+  }
+  ];
 }
 
 
