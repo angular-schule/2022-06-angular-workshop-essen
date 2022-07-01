@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Book } from './book';
 
 @Injectable({
@@ -10,6 +11,7 @@ export class BookRatingService {
   readonly maxRating = 5;
 
   rateUp(book: Book): Book {
+
     return {
       ...book,
       rating: book.rating < this.maxRating ? book.rating + 1 : this.maxRating

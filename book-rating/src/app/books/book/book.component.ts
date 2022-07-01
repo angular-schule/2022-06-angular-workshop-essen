@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Book } from '../shared/book';
 
@@ -8,6 +8,10 @@ import { Book } from '../shared/book';
   styleUrls: ['./book.component.scss']
 })
 export class BookComponent  {
+
+  @Output() rateUp = new EventEmitter<Book>();
+  @Output() rateDown = new EventEmitter<Book>();
+
 
   // benötigt laut Profiler 1.4ms
   @Input() book?: Book;
@@ -32,4 +36,12 @@ export class BookComponent  {
     return this._book;
   }
   */
+
+  doRateUp(): void {
+    this.rateUp.emit(this.book);
+  }
+
+  doRateDown(): void {
+    this.rateDown.emit(this.book);
+  }
 }
