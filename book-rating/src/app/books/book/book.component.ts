@@ -10,16 +10,15 @@ import { Book } from '../shared/book';
 export class BookComponent  {
 
   // benötigt laut Profiler 1.4ms
-  /*
   @Input() book?: Book;
 
   get amountOfStars(): undefined[] {
     return new Array(this.book?.rating);
   }
-  */
 
   // benötigt laut Profiler 1ms (voll schneller 😎)
   // ABER: geht nur wenn Book nicht mutiert wird!
+  /*
   _book?: Book;
   amountOfStars: undefined[] = [];
 
@@ -32,5 +31,5 @@ export class BookComponent  {
   get book(): Book | undefined {
     return this._book;
   }
-
+  */
 }
