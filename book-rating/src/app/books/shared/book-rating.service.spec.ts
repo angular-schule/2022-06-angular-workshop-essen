@@ -1,7 +1,7 @@
 import { Book } from './book';
 import { BookRatingService } from './book-rating.service';
 
-fdescribe('BookRatingService', () => {
+describe('BookRatingService', () => {
 
   let service: BookRatingService;
   let book: Book;
@@ -39,11 +39,17 @@ fdescribe('BookRatingService', () => {
     expect(ratedBook.rating).toBe(1);
   });
 
-  it('should return a new book instance (assuming immutability)', () => {
-    const ratedBook = service.rateUp(book);
-    expect(ratedBook).not.toBe(book);
+  // it('should return a new book instance (assuming immutability)', () => {
+  //   const ratedBook = service.rateUp(book);
+  //   expect(ratedBook).not.toBe(book);
 
-    const ratedBook2 = service.rateDown(book);
-    expect(ratedBook2).not.toBe(book);
+  //   const ratedBook2 = service.rateDown(book);
+  //   expect(ratedBook2).not.toBe(book);
+  // });
+
+  it('should not mutate the original book', () => {
+    const originalBook = { ...book };
+    service.rateUp(book);
+    expect(originalBook).toEqual(book);
   });
 });

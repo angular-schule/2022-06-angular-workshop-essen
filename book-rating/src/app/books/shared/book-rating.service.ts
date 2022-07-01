@@ -6,11 +6,19 @@ import { Book } from './book';
 })
 export class BookRatingService {
 
+  readonly minRating = 1;
+  readonly maxRating = 5;
+
   rateUp(book: Book): Book {
-    return book; // TODO: implement me!
+    return {
+      ...book,
+      rating: book.rating < this.maxRating ? book.rating + 1 : this.maxRating
+    };
   }
 
   rateDown(book: Book): Book {
-    return book; // TODO
+    const rating =  Math.max(book.rating - 1, this.minRating);
+
+    return { ...book, rating };
   }
 }
