@@ -5,7 +5,7 @@ import { BookRatingService } from '../shared/book-rating.service';
 
 import { DashboardComponent } from './dashboard.component';
 
-fdescribe('DashboardComponent', () => {
+describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
 
