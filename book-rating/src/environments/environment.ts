@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  myApiUrl: 'http://localhost/api'
+  myApiUrl: 'https://api.angular.schule/books'
 };
 
 /*

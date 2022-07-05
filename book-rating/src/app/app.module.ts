@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { BooksModule } from './books/books.module';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 // import { BookComponent } from './books/book/book.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { BooksModule } from './books/books.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BooksModule
+    BooksModule,
+    HttpClientModule // NUR IM APPMODULE! (nirgendwo sonst!)
   ],
   providers: [],
   bootstrap: [AppComponent]
