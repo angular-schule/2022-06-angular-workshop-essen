@@ -34,7 +34,6 @@ export class CreatingComponent {
     // const observable$ = of('😎', '🙈', '🚀')
     const observable$ = new Observable<string>(subscriber => {
 
-      debugger
       subscriber.next('😎');
 
       const x = setTimeout(() => subscriber.next('🦋'), 1000);
