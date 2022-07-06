@@ -22,11 +22,11 @@ export class UnsubscribeComponent implements OnDestroy {
   constructor() {
     const interval$ = timer(0, 1000);
 
-    interval$.pipe(
+    const s = interval$.pipe(
 
       /******************************/
 
-      
+
       /******************************/
 
     ).subscribe({
@@ -34,6 +34,8 @@ export class UnsubscribeComponent implements OnDestroy {
       error: err => this.log('❌ ERROR: ' + err),
       complete: () => this.log('✅ COMPLETE')
     });
+
+    s.unsubscribe();
   }
 
   ngOnDestroy() {
